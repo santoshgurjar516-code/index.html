@@ -1,0 +1,120 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Gamepad2, Youtube } from "lucide-react";
+
+export default function SIGGamerWebsite() {
+  return (
+    <div className="relative min-h-screen overflow-hidden bg-black text-white">
+      {/* Animated Gaming Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute w-[600px] h-[600px] bg-red-600 opacity-20 rounded-full blur-3xl animate-pulse top-10 left-10"></div>
+        <div className="absolute w-[500px] h-[500px] bg-purple-600 opacity-20 rounded-full blur-3xl animate-pulse bottom-10 right-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+      </div>
+
+      {/* Header */}
+      <header className="flex items-center justify-between p-6 border-b border-gray-800">
+        <div className="flex items-center gap-3">
+          <Gamepad2 className="text-red-500" size={32} />
+          <h1 className="text-2xl font-bold tracking-wide">SIG Gamer</h1>
+        </div>
+        <nav className="hidden md:flex gap-6 text-gray-300">
+          <a href="#about" className="hover:text-white">About</a>
+          <a href="#logo" className="hover:text-white">Logo</a>
+          <a href="#videos" className="hover:text-white">Videos</a>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="text-center py-20 px-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center mb-8"
+        >
+          {/* Your Logo */}
+          <img
+            src="/logo.png"   
+            alt="Santosh Indian Gamer Logo"
+            className="w-40 h-40 rounded-full border-4 border-red-500 shadow-2xl"
+          />
+        </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-6xl font-extrabold mb-6"
+        >
+          Santosh Indian Gamer
+        </motion.h2>
+
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          Hi, I am <span className="text-red-500 font-semibold">Santosh Gurjar</span>. 
+          I create professional gaming videos, gameplay highlights, YouTube shorts, and live streams.
+        </p>
+
+        <div className="mt-8">
+          <a
+            href="https://youtube.com/@officialsantoshindiangamer?si=_MgDbICATvd2b77B"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-2xl flex items-center gap-2">
+              <Youtube size={20} /> Visit My YouTube
+            </Button>
+          </a>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-16 px-6 bg-gray-950">
+        <div className="max-w-5xl mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-6">About Me</h3>
+          <p className="text-gray-400 text-lg leading-relaxed">
+            My name is Santosh Gurjar and my channel name is Santosh Indian Gamer. 
+            I love gaming and creating entertaining content for my audience. 
+            My goal is to grow SIG Gamer into a professional gaming brand.
+          </p>
+        </div>
+      </section>
+
+      {/* Videos Section */}
+      <section id="videos" className="py-16 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-10">Gaming Content</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+              <CardContent className="p-6">
+                <h4 className="font-semibold mb-2">Gameplay Videos</h4>
+                <p className="text-gray-400 text-sm">High-quality exciting gameplay content.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+              <CardContent className="p-6">
+                <h4 className="font-semibold mb-2">YouTube Shorts</h4>
+                <p className="text-gray-400 text-sm">Short viral gaming clips and highlights.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+              <CardContent className="p-6">
+                <h4 className="font-semibold mb-2">Live Streaming</h4>
+                <p className="text-gray-400 text-sm">Interactive live streams with subscribers.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 text-center border-t border-gray-800 text-gray-500">
+        <p>© 2026 SIG Gamer | Santosh Gurjar</p>
+      </footer>
+    </div>
+  );
+}
